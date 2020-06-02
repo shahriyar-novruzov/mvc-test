@@ -45,7 +45,7 @@ public class StudentController {
 
     @PostMapping("/create")
     public void create(@RequestBody Student student){
-        studentService.create(student);
+        studentService.save(student);
     }
 
     @DeleteMapping("/delete/{id}")

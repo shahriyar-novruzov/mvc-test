@@ -42,7 +42,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void create(Student student) {
+    public void save(Student student) {
         studentRepository.save(student);
     }
 

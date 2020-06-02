@@ -3,23 +3,22 @@ package developia.mvctest.entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity // annotation
 @Data
-@ToString(exclude = {"id", "phone", "university"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = {"id", "phone"})
 public class Student {
 
     @Id
@@ -30,6 +29,8 @@ public class Student {
     private String email;
     private String phone;
     private Integer age;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private StudentCard studentCard;
+    @ManyToOne
     private University university;
 }

@@ -15,7 +15,9 @@ public interface StudentService {
 
     Student findByEmailAndPhone(String email, String phone);
 
-    void create(Student student);
+    void save(Student student);
 
     void delete(Long id);
+
+
 }

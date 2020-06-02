@@ -1,7 +1,9 @@
 package developia.mvctest;
 
 import developia.mvctest.entity.Student;
+import developia.mvctest.entity.University;
 import developia.mvctest.service.StudentService;
+import developia.mvctest.service.UniversityService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +12,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MvcTestApplication implements CommandLineRunner {
 
     private StudentService studentService;
+    private UniversityService universityService;
 
-    public MvcTestApplication(StudentService studentService) {
+    public MvcTestApplication(StudentService studentService, UniversityService universityService) {
         this.studentService = studentService;
+        this.universityService = universityService;
     }
 
     public static void main(String[] args) {
@@ -22,13 +26,11 @@ public class MvcTestApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Student student1 = studentService.findById(51L);
-        Student student2 = studentService.findById(61L);
-
-        System.out.println(student1);
-        System.out.println(student2);
-
-        System.out.println(student1.equals(student2));
-
+//        University university = universityService.findById(76L);
+//
+//        Student student = studentService.findById(78L);
+//        student.setUniversity(university);
+//
+//        studentService.save(student);
     }
 }
