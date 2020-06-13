@@ -1,5 +1,6 @@
 package developia.mvctest.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,5 +29,6 @@ public class University {
     private String name;
     @OneToMany(mappedBy = "university", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @ToString.Exclude
+    @JsonIgnore
     private List<Student> students;
 }

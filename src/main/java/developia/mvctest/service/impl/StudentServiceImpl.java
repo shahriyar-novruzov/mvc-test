@@ -26,6 +26,11 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+    /*
+       FindAll method for get all students
+       no param
+    */
+
     @Override
     public List<Student> findAll() {
         return studentRepository.findAll();
